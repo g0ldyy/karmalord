@@ -1,0 +1,13 @@
+[project]
+name = "karmalord"
+version = "0.1.0"
+description = "Reddit's most powerful karma bot."
+authors = [
+    { name = "Goldy", email = "153996346+g0ldyy@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "curl-cffi>=0.11.1",
+    "pydantic>=2.11.5",
+    "requests>=2.32.3",
+]

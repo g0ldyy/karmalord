@@ -142,6 +142,12 @@ class RedditConfig(BaseModel):
             raise ValueError(
                 "max_delay_between_accounts must be greater than min_delay_between_accounts"
             )
+        
+        # Validate delay between targets
+        if self.max_delay_between_targets <= self.min_delay_between_targets:
+            raise ValueError(
+                "max_delay_between_targets must be greater than min_delay_between_targets"
+            )
 
         # Validate daily actions vs hourly actions
         if self.max_actions_per_day <= self.max_actions_per_hour:
@@ -153,12 +159,6 @@ class RedditConfig(BaseModel):
         if self.discord_webhook_enabled and not self.discord_webhook_url:
             raise ValueError(
                 "discord_webhook_url must be provided when discord_webhook_enabled is True"
-            )
-
-        # Validate delay between targets
-        if self.max_delay_between_targets <= self.min_delay_between_targets:
-            raise ValueError(
-                "max_delay_between_targets must be greater than min_delay_between_targets"
             )
 
         return self

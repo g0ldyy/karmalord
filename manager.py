@@ -12,10 +12,6 @@ from config import RedditConfig, load_config
 
 
 class KarmaLord:
-    """
-    Advanced Reddit automation with karma manipulation features
-    """
-
     def __init__(self, config: RedditConfig = None):
         self.config = config or load_config()
         self.accounts: List[KarmaLordClient] = []

@@ -142,7 +142,7 @@ class RedditConfig(BaseModel):
             raise ValueError(
                 "max_delay_between_accounts must be greater than min_delay_between_accounts"
             )
-        
+
         # Validate delay between targets
         if self.max_delay_between_targets <= self.min_delay_between_targets:
             raise ValueError(

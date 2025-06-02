@@ -1,7 +1,7 @@
 import json
 import argparse
 from pathlib import Path
-from stealth_manager import KarmaLord
+from manager import KarmaLord
 from config import load_config, save_default_config
 
 
